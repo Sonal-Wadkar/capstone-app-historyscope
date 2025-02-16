@@ -1,0 +1,64 @@
+.footer{
+    padding: 4rem 6rem;
+    background-color: #3f2a52;
+    color: white;
+}
+
+.top{
+    display: flex;
+    align-items: center;
+    text-align: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    background-color: #3f2a52;
+}
+
+.top h1{
+    background-color: #3f2a52;
+    color: white;
+}
+
+.top p{
+    color: white;
+    background-color: #3f2a52;
+}
+
+.bottom{
+    padding-top: 2rem;
+    text-align: start;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    background-color: #3f2a52;
+}
+
+.bottom div{
+    display: flex;
+    flex-direction: column;
+    background-color: #3f2a52;
+}
+
+.bottom h4{
+    font-size: 1.3rem;
+    padding: 1rem 0 .8rem 0;
+    background-color: #3f2a52;
+    color: white;
+}
+
+.bottom a{
+    text-decoration: none;
+    color: white;
+    padding-bottom: .4rem;
+    font-size: 1.1rem;
+    background-color: #3f2a52;
+}
+
+@media screen and (max-width: 850px){
+    .footer{
+        padding: 4rem 2rem;
+    }
+
+    .footer div{
+        width: 50%;
+    }
+}

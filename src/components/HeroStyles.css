@@ -1,0 +1,104 @@
+.hero {
+    display: flex;
+    overflow-x: hidden;
+    overflow-y: hidden;
+    justify-content: center;
+    align-items: center; 
+    width: 100%;
+    height: 100vh;
+    position: relative;
+    background: #ebebdf; /* Added background color */
+} 
+
+.hero-mid {
+    display: flex;
+    overflow-x: hidden;
+    justify-content: center;
+    align-items: center; 
+    width: 100%;
+    height: 70vh;
+    position: relative;
+    background: #ebebdf; /* Added background color */
+}
+
+.hero-mid h1 {
+    padding-top: 28rem;
+}
+
+.hero img {
+    width: 100%;
+    height: 100%;
+    max-width: 100vw;
+    display: block;
+    overflow: hidden;
+}
+
+.heroText {
+    position: absolute;
+    color: #3f2a52;
+    font-size: 2rem;
+    font-weight: 800;
+    text-shadow: white;
+    background: transparent;
+    justify-content: center;
+}
+
+.heroText h1 {
+    font-size: 4.5rem;
+    font-weight: 800;
+    color: #3f2a52;
+    background: transparent;
+    justify-content: center;
+    align-items: center;
+}
+
+.heroText p {
+    font-size: 1.2rem;
+    color: #3f2a52;
+    background: transparent;
+    justify-content: center;
+    align-items: center;
+}
+
+.heroText .btnClass {
+    text-decoration: none;
+    background: transparent;
+    color: #3f2a52;
+    padding: 1rem 2rem;
+    border-radius: 6px;
+    font-size: 1.1rem;
+    font-weight: bold;
+    letter-spacing: 2px;
+    justify-content: center;
+}
+
+.hero a:hover {
+    color: #3f2a52;
+    cursor: pointer;
+}
+
+.heroText .hide {
+    display: none;
+}
+
+img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+@media screen and (max-width: 555px) {
+    .heroText h1 {
+        padding: 10px 20px;
+    }
+
+    .heroText p {
+        font-size: 1.1rem;
+        padding: 0 0 2rem 0;
+    }
+}
+
+/* Added background color to the entire page */
+body {
+    background: #ebebdf;
+}

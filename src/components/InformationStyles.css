@@ -1,0 +1,24 @@
+.information{
+    margin: 4rem 6rem;
+}
+
+.information h1{
+    font-size: 3rem;
+    align-items: center;
+    align-content: center;
+    color: #3f2a52;
+}
+
+.information p{
+    font-size: 1rem;
+    align-items: center;
+    align-content: center;
+    color: #3f2a52;
+}
+
+@media screen and (max-width: 850px) {
+    .information{
+        margin: 4rem , 2rem;
+    }
+    
+}

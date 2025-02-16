@@ -1,0 +1,249 @@
+/* Global Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Roboto", sans-serif;
+    font-size: 16px;
+    background-color: #3f2a52;
+    color: #3f2a52;
+}
+
+ul, ol {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+    outline: none;
+    transition: all 0.4s ease-in-out;
+}
+
+a:hover {
+    color: none;
+}
+
+img {
+    max-width: 100%;
+    border: 0;
+}
+
+.section-title {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: #3f2a52;
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+.section-subtitle {
+    font-size: 1.2rem;
+    color: #3f2a52;
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.explore {
+    padding: 80px 20px;
+    text-align: center;
+}
+
+.card-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+    flex-wrap: wrap;
+    margin-top: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.card {
+    flex: 1;
+    min-width: 350px;
+    max-width: 370px;
+    padding: 20px;
+    background: #ebebdf;
+    border-radius: 5px;
+    text-align: center;
+    transition: all 0.3s ease-in-out;
+    box-shadow: 0px 4px 10px rgba(255, 255, 255, 0.1);
+    cursor: pointer;
+}
+
+.card:hover {
+    transform: scale(1.05);
+    box-shadow: 0px 6px 15px rgba(255, 255, 255, 0.2);
+}
+
+.card img {
+    width: 90px;
+    height: auto;
+    margin-bottom: 15px;
+    transition: transform 0.3s ease-in-out;
+}
+
+.card h2 {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #3f2a52;
+    margin-bottom: 10px;
+}
+
+.card p {
+    font-size: 1rem;
+    color: #3f2a52;
+    line-height: 1.5;
+}
+
+.card:hover {
+    transform: scale(1.05);
+    box-shadow: 0px 4px 10px rgba(255, 255, 255, 0.2);
+    background-color: #3f2a52;
+}
+
+.link-card {
+    text-decoration: none;
+}
+
+.custom-carousel {
+    display: flex;
+    justify-content: center;
+    margin-top: 40px;
+}
+
+.owl-carousel .item {
+    width: 320px;
+    height: 400px;
+    display: flex;
+    align-items: flex-end;
+    background: #343434 no-repeat center center / cover;
+    border-radius: 16px;
+    overflow: hidden;
+    position: relative;
+    transition: all 0.4s ease-in-out;
+    cursor: pointer;
+}
+
+.owl-carousel .item.active {
+    width: 500px;
+    box-shadow: 12px 40px 40px rgba(0, 0, 0, 0.25);
+}
+
+.owl-carousel .item:after {
+    content: "";
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    left: 0;
+    top: 0;
+    background-image: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 1));
+}
+
+.item-desc {
+    padding: 0 24px 12px;
+    color: #3f2a52;
+    position: relative;
+    z-index: 1;
+    overflow: hidden;
+    transform: translateY(calc(100% - 54px));
+    transition: all 0.4s ease-in-out;
+}
+
+.item.active .item-desc {
+    transform: none;
+}
+
+.item-desc p {
+    opacity: 0;
+    transform: translateY(32px);
+    transition: all 0.4s ease-in-out 0.2s;
+}
+
+.item.active .item-desc p {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.owl-theme.custom-carousel .owl-dots {
+    margin-top: -20px;
+    position: relative;
+    z-index: 5;
+}
+
+@media screen and (max-width: 1024px) {
+    .card-container {
+        flex-direction: row;
+        justify-content: center;
+        gap: 1.5rem;
+    }
+
+    .card {
+        min-width: 220px;
+        max-width: 260px;
+    }
+
+    .card h2 {
+        font-size: 1.3rem;
+    }
+
+    .card p {
+        font-size: 0.9rem;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .card-container {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 1rem;
+    }
+
+    .section-title {
+        font-size: 2rem;
+    }
+
+    .card img {
+        width: 80px;
+    }
+
+    .card h2 {
+        font-size: 1.2rem;
+    }
+
+    .card p {
+        font-size: 0.9rem;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .section-title {
+        font-size: 1.8rem;
+    }
+
+    .section-subtitle {
+        font-size: 0.9rem;
+    }
+
+    .card {
+        width: 95%;
+        max-width: 320px;
+    }
+
+    .card img {
+        width: 70px;
+    }
+
+    .card h2 {
+        font-size: 1.1rem;
+    }
+
+    .card p {
+        font-size: 0.85rem;
+    }
+}

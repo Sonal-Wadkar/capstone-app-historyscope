@@ -1,0 +1,56 @@
+.intro{
+    margin: 4rem 6rem;
+}
+
+.table {
+	width: 800px;
+	border-collapse: collapse;
+	overflow: hidden;
+	box-shadow: 0 0 20px rgba(0,0,0,0.1);
+    
+}
+
+td {
+	padding: 15px;
+	background-color: #00171F;
+	color: #3f2a52;
+    text-align: center;
+}
+
+th {
+	text-align: center;
+}
+
+thead {
+	th {
+		background-color: #fffffF;
+        color: #3f2a52;
+        text-align: center;
+	}
+}
+
+.intro h1{
+    font-size: 3rem;
+    align-items: center;
+    align-content: center;
+    color: #3f2a52;
+}
+
+.intro p{
+    font-size: 1rem;
+    align-items: center;
+    align-content: center;
+    color: #3f2a52;
+}
+
+.table h1{
+    font-size: 3rem;
+    align-items: center;
+    align-content: center;
+    color: #3f2a52;
+    margin: 4rem 6rem;
+}
+
+.about-table{
+    margin: 4rem 6rem;
+}
