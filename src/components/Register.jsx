@@ -4,7 +4,8 @@ import { ToastContainer } from 'react-toastify';
 import { handleError, handleSuccess } from '../utils';
 import './AuthFormStyles.css';
 
-const Register = ({ onFormSwitch }) => {  
+
+const Register = () => {  
     const [signupInfo, setSignupInfo] = useState({
         name: '',
         email: '',
@@ -70,4 +71,4 @@ const Register = ({ onFormSwitch }) => {
     );
 };
 
-export default Register;  // ✅ Default export
+export default Register;

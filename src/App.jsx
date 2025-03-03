@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { Routes, Route, Navigate } from 'react-router-dom';
 import Home from './pages/Home';
 import About from './pages/About';
@@ -7,27 +7,39 @@ import Services from './pages/Services';
 import Log from './pages/Log';
 import Signup from './pages/Signup';
 import Travel from './pages/Travel';
+import ArtGallery from './pages/ArtGallery.jsx';
+import EventLog from './pages/EventLog.jsx';
 import RefreshHandler from './components/RefreshHandler.jsx';
 
 function App() {
   const [isAuthenticated, setIsAuthenticated] = useState(false);
 
+  useEffect(() => {
+    // Check if the user is authenticated (e.g., token exists)
+    const token = localStorage.getItem('token');
+    setIsAuthenticated(!!token);
+  }, []);
+
   const PrivateRoute = ({ element }) => {
-    return isAuthenticated ? element : <Navigate to="/login" />;
+    return isAuthenticated ? element : <Navigate to="/login" replace />;
   };
 
   return (
     <>
-      <RefreshHandler setIsAuthenticated={setIsAuthenticated} /> {/* Correct usage of RefreshHandler */}
+      <RefreshHandler setIsAuthenticated={setIsAuthenticated} />
       <Routes>
-        <Route path="/" element={<Navigate to="/login" />} />
-        <Route path='/home' element={<Home />} />
+        <Route path="/" element={<Navigate to="/home" />} />
+        <Route path="/home" element={<Home />} />
         <Route path="/about" element={<About />} />
         <Route path="/contact" element={<Contact />} />
         <Route path="/services" element={<Services />} />
         <Route path="/login" element={<Log />} />
         <Route path="/signup" element={<Signup />} />
-        <Route path="/travel-planner" element={<Travel />} />
+        
+        {/* Protected Route for Services */}
+        <Route path="/travel-planner" element={<PrivateRoute element={<Travel />} />} />
+        <Route path="/art-gallery" element={<PrivateRoute element={<ArtGallery />} />} />
+        <Route path="/event-log" element={<PrivateRoute element={<EventLog />} />} />
       </Routes>
     </>
   );

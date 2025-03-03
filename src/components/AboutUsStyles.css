@@ -6,13 +6,19 @@
 	width: 800px;
 	border-collapse: collapse;
 	overflow: hidden;
-	box-shadow: 0 0 20px rgba(0,0,0,0.1);
     
 }
 
 td {
 	padding: 15px;
-	background-color: #00171F;
+	background-color:#ebebdf,
+    0 0 5px #ebebdf,   
+    0 0 10px #ebebdf,  
+    0 0 15px #ebebdf, 
+    0 0 20px #ebebdf, 
+    0 0 25px #ebebdf, 
+    0 0 30px #ebebdf, 
+    0 0 35px #ebebdf; ;
 	color: #3f2a52;
     text-align: center;
 }
@@ -23,7 +29,7 @@ th {
 
 thead {
 	th {
-		background-color: #fffffF;
+		background-color: #ebebdf;
         color: #3f2a52;
         text-align: center;
 	}

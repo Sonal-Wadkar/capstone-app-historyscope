@@ -5,8 +5,8 @@ import { ToastContainer } from 'react-toastify';
 import { handleError, handleSuccess } from '../utils';
 import './AuthFormStyles.css';
 
-const Login = () => {  // Default export is used here
 
+const Login = () => {
     const [loginInfo, setLoginInfo] = useState({
         email: '',
         password: ''

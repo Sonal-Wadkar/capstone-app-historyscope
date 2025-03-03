@@ -35,7 +35,7 @@
 
 .heroText {
     position: absolute;
-    color: #3f2a52;
+    color: #ebebdf;
     font-size: 2rem;
     font-weight: 800;
     text-shadow: white;
@@ -50,6 +50,14 @@
     background: transparent;
     justify-content: center;
     align-items: center;
+    text-shadow: 
+        0 0 5px #ebebdf,   
+        0 0 10px #ebebdf,  
+        0 0 15px #ebebdf, 
+        0 0 20px #ebebdf, 
+        0 0 25px #ebebdf, 
+        0 0 30px #ebebdf, 
+        0 0 35px #ebebdf; 
 }
 
 .heroText p {
@@ -58,6 +66,14 @@
     background: transparent;
     justify-content: center;
     align-items: center;
+    text-shadow: 
+        0 0 5px #ebebdf,   
+        0 0 10px #ebebdf,  
+        0 0 15px #ebebdf, 
+        0 0 20px #ebebdf, 
+        0 0 25px #ebebdf, 
+        0 0 30px #ebebdf, 
+        0 0 35px #ebebdf; 
 }
 
 .heroText .btnClass {

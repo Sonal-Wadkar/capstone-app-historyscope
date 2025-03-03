@@ -12,21 +12,21 @@ function Explore() {
             <h1 className="section-title">Our Services</h1>
             <p className="section-subtitle">Explore the World through our services.</p>
             <div className="card-container">
-                <div className="card">
+                <Link to="/art-gallery" className="card link-card">  
                     <ExploreData 
                         image={arrt}
                         head="Art Gallery"
                         text="An adventure into an unknown world of color."
                     />
-                </div>
+                </Link>
 
-                <div className="card">
+                <Link to="/event-log" className="card link-card">
                     <ExploreData 
                         image={event}
                         head="Event Logs"
                         text="Witnessing the events that changed mankind."
                     />
-                </div>
+                </Link>
 
                 <Link to="/travel-planner" className="card link-card">
                     <ExploreData 

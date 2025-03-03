@@ -8,7 +8,7 @@ function RefrshHandler({ setIsAuthenticated }) {
     useEffect(() => {
         if (localStorage.getItem('token')) {
             setIsAuthenticated(true);
-            if (location.pathname === '/' ||
+            if (location.pathname === '/' || //base
                 location.pathname === '/login' ||
                 location.pathname === '/signup'
             ) {

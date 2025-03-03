@@ -1,12 +1,32 @@
-import React, { useState } from "react";
-import { NavLink } from "react-router-dom";
+import React, { useEffect, useState } from "react";
+import { NavLink, useNavigate } from "react-router-dom";
 import "./navbarStyles.css";
+import { ToastContainer } from "react-toastify";
+import { handleSuccess } from "../utils";
 
 function Navbar() {
     const [clicked, setClicked] = useState(false);
+    const [loggedInUser, setLoggedInUser] = useState(null);
+    const navigate = useNavigate();
+
+    useEffect(() => {
+        const user = localStorage.getItem('loggedInUser');
+        setLoggedInUser(user);
+    }, []);
 
     const handleClick = () => {
         setClicked(!clicked);
+    };
+
+    const handleLogout = () => {
+        localStorage.removeItem('token');
+        localStorage.removeItem('loggedInUser');
+        handleSuccess('User Logged Out')
+        setTimeout(() => {
+            navigate('/login');
+        }, 1000);
+        setLoggedInUser(null);
+        
     };
 
     return (
@@ -17,76 +37,29 @@ function Navbar() {
             </div>
             <ul className={clicked ? "menu active" : "menu"}>
                 <li>
-                    <NavLink
-                        to="/"
-                        className="nav-links"
-                        style={({ isActive }) => ({
-                            color: isActive ? "#3f2a52" : "#ffffff",
-                            backgroundColor: isActive ? "white" : "#3f2a52",
-                            borderRadius: "4px",
-                            padding: "0.5rem 1rem",
-                        })}
-                    >
-                        Home
-                    </NavLink>
+                    <NavLink to="/" className="nav-links">Home</NavLink>
                 </li>
                 <li>
-                    <NavLink
-                        to="/about"
-                        className="nav-links"
-                        style={({ isActive }) => ({
-                            color: isActive ? "#3f2a52" : "#ffffff",
-                            backgroundColor: isActive ? "white" : "#3f2a52",
-                            borderRadius: "4px",
-                            padding: "0.5rem 1rem",
-                        })}
-                    >
-                        About
-                    </NavLink>
+                    <NavLink to="/about" className="nav-links">About</NavLink>
                 </li>
                 <li>
-                    <NavLink
-                        to="/contact"
-                        className="nav-links"
-                        style={({ isActive }) => ({
-                            color: isActive ? "#3f2a52" : "#ffffff",
-                            backgroundColor: isActive ? "white" : "#3f2a52",
-                            borderRadius: "4px",
-                            padding: "0.5rem 1rem",
-                        })}
-                    >
-                        Contact
-                    </NavLink>
+                    <NavLink to="/contact" className="nav-links">Contact</NavLink>
                 </li>
                 <li>
-                    <NavLink
-                        to="/services"
-                        className="nav-links"
-                        style={({ isActive }) => ({
-                            color: isActive ? "#3f2a52" : "#ffffff",
-                            backgroundColor: isActive ? "white" : "#3f2a52",
-                            borderRadius: "4px",
-                            padding: "0.7rem 1rem",
-                        })}
-                    >
-                        Our Services
-                    </NavLink>
+                    <NavLink to="/services" className="nav-links">Our Services</NavLink>
                 </li>
-                <li>
-                    <NavLink
-                        to="/signup"
-                        className="button"
-                        style={({ isActive }) => ({
-                            color: isActive ? "#3f2a52" : "#ffffff",
-                            backgroundColor: isActive ? "white" : "#3f2a52",
-                            borderRadius: "4px",
-                            padding: "0.7rem 1rem",
-                        })}
-                    >
-                        Sign Up
-                    </NavLink>
-                </li>
+                
+                {loggedInUser ? (
+                    <li>
+                        <button className="logout-btn" onClick={handleLogout}>Logout</button>
+                    </li>
+                ) : (
+                    <li>
+                        <NavLink to="/signup" className="button">Signup</NavLink>
+                    </li>
+                )}
             </ul>
+            <ToastContainer />
         </nav>
     );
 }
