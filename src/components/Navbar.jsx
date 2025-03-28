@@ -46,7 +46,7 @@ function Navbar() {
                     <NavLink to="/contact" className="nav-links">Contact</NavLink>
                 </li>
                 <li>
-                    <NavLink to="/services" className="nav-links">Our Services</NavLink>
+                    <NavLink to="/services" className="nav-links">Services</NavLink>
                 </li>
                 
                 {loggedInUser ? (

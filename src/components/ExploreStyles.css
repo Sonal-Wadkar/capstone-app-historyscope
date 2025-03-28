@@ -8,7 +8,7 @@
 body {
     font-family: "Roboto", sans-serif;
     font-size: 16px;
-    background-color: #3f2a52;
+    background-color: #ebebdf;
     color: #3f2a52;
 }
 
@@ -79,6 +79,13 @@ img {
 .card:hover {
     transform: scale(1.05);
     box-shadow: 0px 6px 15px rgba(255, 255, 255, 0.2);
+    background-color: #3f2a52;
+}
+
+/* Change text color on hover */
+.card:hover h2,
+.card:hover p {
+    color: #ebebdf; /* Set text color to #ebebdf when hovered */
 }
 
 .card img {
@@ -91,7 +98,7 @@ img {
 .card h2 {
     font-size: 1.5rem;
     font-weight: 700;
-    color: #3f2a52;
+    color: #ebebdf;
     margin-bottom: 10px;
 }
 

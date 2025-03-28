@@ -8,7 +8,7 @@ import Log from './pages/Log';
 import Signup from './pages/Signup';
 import Travel from './pages/Travel';
 import ArtGallery from './pages/ArtGallery.jsx';
-import EventLog from './pages/EventLog.jsx';
+import Event from './pages/Event.jsx';
 import RefreshHandler from './components/RefreshHandler.jsx';
 
 function App() {
@@ -39,7 +39,7 @@ function App() {
         {/* Protected Route for Services */}
         <Route path="/travel-planner" element={<PrivateRoute element={<Travel />} />} />
         <Route path="/art-gallery" element={<PrivateRoute element={<ArtGallery />} />} />
-        <Route path="/event-log" element={<PrivateRoute element={<EventLog />} />} />
+        <Route path="/event-log" element={<PrivateRoute element={<Event />} />} />
       </Routes>
     </>
   );
